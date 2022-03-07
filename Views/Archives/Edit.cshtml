@@ -1,0 +1,74 @@
+﻿@model The_Archivist.Models.Archive
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Archive</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="title" class="control-label"></label>
+                <input asp-for="title" class="form-control" />
+                <span asp-validation-for="title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="content" class="control-label"></label>
+                <input asp-for="content" class="form-control" />
+                <span asp-validation-for="content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="archiveTypeId" class="control-label"></label>
+                <select asp-for="archiveTypeId" class="form-control" asp-items="ViewBag.archiveTypeId"></select>
+                <span asp-validation-for="archiveTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="departmentId" class="control-label"></label>
+                <select asp-for="departmentId" class="form-control" asp-items="ViewBag.departmentId"></select>
+                <span asp-validation-for="departmentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="imageSrc" class="control-label"></label>
+                <input asp-for="imageSrc" class="form-control" />
+                <span asp-validation-for="imageSrc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fileSrc" class="control-label"></label>
+                <input asp-for="fileSrc" class="form-control" />
+                <span asp-validation-for="fileSrc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="addDateTime" class="control-label"></label>
+                <input asp-for="addDateTime" class="form-control" />
+                <span asp-validation-for="addDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="publishDateTime" class="control-label"></label>
+                <input asp-for="publishDateTime" class="form-control" />
+                <span asp-validation-for="publishDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="clientId" class="control-label"></label>
+                <select asp-for="clientId" class="form-control" asp-items="ViewBag.clientId"></select>
+                <span asp-validation-for="clientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,32 @@
+﻿@model The_Archivist.Models.Department
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Department</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.depName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.depName)
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.orgnization.orgName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.orgnization.orgName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
